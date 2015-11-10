@@ -11,7 +11,7 @@ int main(void)
     int *array2 = malloc(10 * sizeof(int));
     /* WARNING: malloc may fail and return a NULL value for the pointer
                 Good programming practice mandates checking for such failures. */
-    if (NULL == array) {
+    if (NULL == array2) {
       // Print to the "file" of standard error, rather than standard out
       fprintf(stderr, "malloc failed\n");
       // Return a non-successful integer
