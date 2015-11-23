@@ -22,27 +22,37 @@ int main(void)
     int i;
     // constant character array (i.e., a string)
     const char *string = "Foobar.";
-    
-    for (i=0; i<10; i++)
-    {
-        // assign the value i to the ith integer element of array
-        array[i] = i;
-        // set the value inside the memory address at array2 + (i bytes) to i
-        *(array2+i) = i;
-    }
 
-    // increment three bytes BEYOND the allocated memory (buffer overrun)
-    for (i=0; i<13; i++)
-    {
-        // print the array values in the usual way
-        printf("array[%d] : %d\t", i, array[i]);
-        // print the values contained in each memory address starting at array2 
-        printf("*(array2 + %d) : %d\t", i, *(array2+i));
-        // print each character in the string
-        printf("string[%d] : %c\t", i, string[i]);
-        // do the same thing, but in pointer notation
-        printf("*(string + %d) : %c\n", i, *(string+i));
-    }
+    // set array function 
+    int setarrays(i) {
+        for (i=0; i<10; i++)
+        {
+            // assign the value i to the ith integer element of array
+            array[i] = i;
+            // set the value inside the memory address at array2 + (i bytes) to i
+            *(array2+i) = i;
+        }
+    };
+
+    // print arrays function 
+    int printarrays(i) {
+        // increment three bytes BEYOND the allocated memory (buffer overrun)
+        for (i=0; i<13; i++)
+        {
+            // print the array values in the usual way
+            printf("array[%d] : %d\t", i, array[i]);
+            // print the values contained in each memory address starting at array2 
+            printf("*(array2 + %d) : %d\t", i, *(array2+i));
+            // print each character in the string
+            printf("string[%d] : %c\t", i, string[i]);
+            // do the same thing, but in pointer notation
+            printf("*(string + %d) : %c\n", i, *(string+i));
+        }
+    };
+    
+    setarrays(i);
+    printarrays(i);
+    
     
     // explicitly free the block of memory malloc-ed at array2 for later use
     free(array2);
