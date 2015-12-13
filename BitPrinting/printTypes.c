@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "typeio.h"
 
-#define C 42
+#define C 11836311903
 
 int main(void) {
     char c = C;
